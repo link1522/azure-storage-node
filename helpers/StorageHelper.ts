@@ -23,3 +23,19 @@ export async function listContainers() {
     console.log(`Container ${i++}: ${container.name}`);
   }
 }
+
+export async function listContainersByPage(maxPageSize: number) {
+  let i = 1;
+  let page = 1;
+
+  for await (const response of blobServiceClient.listContainers().byPage({
+    maxPageSize
+  })) {
+    if (response.containerItems) {
+      console.log(`\n============= Page ${page++} =============`);
+      for (const container of response.containerItems) {
+        console.log(`Container ${i++}: ${container.name}`);
+      }
+    }
+  }
+}
