@@ -1,4 +1,6 @@
 import 'jsr:@std/dotenv/load';
-import { createContainer } from './helpers/StorageHelper.ts';
+import { createContainer, listContainers } from './helpers/StorageHelper.ts';
 
-createContainer('test-999');
+// createContainer('test-999');
+
+listContainers();

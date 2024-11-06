@@ -15,3 +15,11 @@ export async function createContainer(containerName: string) {
 
   console.log(`Created container ${containerName}`);
 }
+
+export async function listContainers() {
+  const containers = blobServiceClient.listContainers();
+  let i = 1;
+  for await (const container of containers) {
+    console.log(`Container ${i++}: ${container.name}`);
+  }
+}
