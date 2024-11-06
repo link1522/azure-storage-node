@@ -1,11 +1,6 @@
 {
   "tasks": {
-    "start": "deno run --allow-env --allow-read=.env main.ts",
+    "start": "deno run --allow-all main.ts",
     "dev": "deno run --watch main.ts"
-  },
-  "permissions": {
-    "read": [
-      "./.env"
-    ]
   }
 }

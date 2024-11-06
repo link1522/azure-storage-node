@@ -1,3 +1,4 @@
 import 'jsr:@std/dotenv/load';
+import { createContainer } from './helpers/StorageHelper.ts';
 
-console.log(Deno.env.get('TEST'));
+createContainer('test-999');

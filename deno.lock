@@ -2,6 +2,7 @@
   "version": "4",
   "specifiers": {
     "jsr:@std/dotenv@*": "0.225.2",
+    "npm:@azure/storage-blob@*": "12.25.0",
     "npm:@types/node@*": "22.5.4"
   },
   "jsr": {
@@ -10,11 +11,161 @@
     }
   },
   "npm": {
+    "@azure/abort-controller@2.1.2": {
+      "integrity": "sha512-nBrLsEWm4J2u5LpAPjxADTlq3trDgVZZXHNKabeXZtpq3d3AbN/KGO82R87rdDz5/lYB024rtEf10/q0urNgsA==",
+      "dependencies": [
+        "tslib"
+      ]
+    },
+    "@azure/core-auth@1.9.0": {
+      "integrity": "sha512-FPwHpZywuyasDSLMqJ6fhbOK3TqUdviZNF8OqRGA4W5Ewib2lEEZ+pBsYcBa88B2NGO/SEnYPGhyBqNlE8ilSw==",
+      "dependencies": [
+        "@azure/abort-controller",
+        "@azure/core-util",
+        "tslib"
+      ]
+    },
+    "@azure/core-client@1.9.2": {
+      "integrity": "sha512-kRdry/rav3fUKHl/aDLd/pDLcB+4pOFwPPTVEExuMyaI5r+JBbMWqRbCY1pn5BniDaU3lRxO9eaQ1AmSMehl/w==",
+      "dependencies": [
+        "@azure/abort-controller",
+        "@azure/core-auth",
+        "@azure/core-rest-pipeline",
+        "@azure/core-tracing",
+        "@azure/core-util",
+        "@azure/logger",
+        "tslib"
+      ]
+    },
+    "@azure/core-http-compat@2.1.2": {
+      "integrity": "sha512-5MnV1yqzZwgNLLjlizsU3QqOeQChkIXw781Fwh1xdAqJR5AA32IUaq6xv1BICJvfbHoa+JYcaij2HFkhLbNTJQ==",
+      "dependencies": [
+        "@azure/abort-controller",
+        "@azure/core-client",
+        "@azure/core-rest-pipeline"
+      ]
+    },
+    "@azure/core-lro@2.7.2": {
+      "integrity": "sha512-0YIpccoX8m/k00O7mDDMdJpbr6mf1yWo2dfmxt5A8XVZVVMz2SSKaEbMCeJRvgQ0IaSlqhjT47p4hVIRRy90xw==",
+      "dependencies": [
+        "@azure/abort-controller",
+        "@azure/core-util",
+        "@azure/logger",
+        "tslib"
+      ]
+    },
+    "@azure/core-paging@1.6.2": {
+      "integrity": "sha512-YKWi9YuCU04B55h25cnOYZHxXYtEvQEbKST5vqRga7hWY9ydd3FZHdeQF8pyh+acWZvppw13M/LMGx0LABUVMA==",
+      "dependencies": [
+        "tslib"
+      ]
+    },
+    "@azure/core-rest-pipeline@1.17.0": {
+      "integrity": "sha512-62Vv8nC+uPId3j86XJ0WI+sBf0jlqTqPUFCBNrGtlaUeQUIXWV/D8GE5A1d+Qx8H7OQojn2WguC8kChD6v0shA==",
+      "dependencies": [
+        "@azure/abort-controller",
+        "@azure/core-auth",
+        "@azure/core-tracing",
+        "@azure/core-util",
+        "@azure/logger",
+        "http-proxy-agent",
+        "https-proxy-agent",
+        "tslib"
+      ]
+    },
+    "@azure/core-tracing@1.2.0": {
+      "integrity": "sha512-UKTiEJPkWcESPYJz3X5uKRYyOcJD+4nYph+KpfdPRnQJVrZfk0KJgdnaAWKfhsBBtAf/D58Az4AvCJEmWgIBAg==",
+      "dependencies": [
+        "tslib"
+      ]
+    },
+    "@azure/core-util@1.11.0": {
+      "integrity": "sha512-DxOSLua+NdpWoSqULhjDyAZTXFdP/LKkqtYuxxz1SCN289zk3OG8UOpnCQAz/tygyACBtWp/BoO72ptK7msY8g==",
+      "dependencies": [
+        "@azure/abort-controller",
+        "tslib"
+      ]
+    },
+    "@azure/core-xml@1.4.4": {
+      "integrity": "sha512-J4FYAqakGXcbfeZjwjMzjNcpcH4E+JtEBv+xcV1yL0Ydn/6wbQfeFKTCHh9wttAi0lmajHw7yBbHPRG+YHckZQ==",
+      "dependencies": [
+        "fast-xml-parser",
+        "tslib"
+      ]
+    },
+    "@azure/logger@1.1.4": {
+      "integrity": "sha512-4IXXzcCdLdlXuCG+8UKEwLA1T1NHqUfanhXYHiQTn+6sfWCZXduqbtXDGceg3Ce5QxTGo7EqmbV6Bi+aqKuClQ==",
+      "dependencies": [
+        "tslib"
+      ]
+    },
+    "@azure/storage-blob@12.25.0": {
+      "integrity": "sha512-oodouhA3nCCIh843tMMbxty3WqfNT+Vgzj3Xo5jqR9UPnzq3d7mzLjlHAYz7lW+b4km3SIgz+NAgztvhm7Z6kQ==",
+      "dependencies": [
+        "@azure/abort-controller",
+        "@azure/core-auth",
+        "@azure/core-client",
+        "@azure/core-http-compat",
+        "@azure/core-lro",
+        "@azure/core-paging",
+        "@azure/core-rest-pipeline",
+        "@azure/core-tracing",
+        "@azure/core-util",
+        "@azure/core-xml",
+        "@azure/logger",
+        "events",
+        "tslib"
+      ]
+    },
     "@types/node@22.5.4": {
       "integrity": "sha512-FDuKUJQm/ju9fT/SeX/6+gBzoPzlVCzfzmGkwKvRHQVxi4BntVbyIwf6a4Xn62mrvndLiml6z/UBXIdEVjQLXg==",
       "dependencies": [
         "undici-types"
       ]
+    },
+    "agent-base@7.1.1": {
+      "integrity": "sha512-H0TSyFNDMomMNJQBn8wFV5YC/2eJ+VXECwOadZJT554xP6cODZHPX3H9QMQECxvrgiSOP1pHjy1sMWQVYJOUOA==",
+      "dependencies": [
+        "debug"
+      ]
+    },
+    "debug@4.3.7": {
+      "integrity": "sha512-Er2nc/H7RrMXZBFCEim6TCmMk02Z8vLC2Rbi1KEBggpo0fS6l0S1nnapwmIi3yW/+GOJap1Krg4w0Hg80oCqgQ==",
+      "dependencies": [
+        "ms"
+      ]
+    },
+    "events@3.3.0": {
+      "integrity": "sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q=="
+    },
+    "fast-xml-parser@4.5.0": {
+      "integrity": "sha512-/PlTQCI96+fZMAOLMZK4CWG1ItCbfZ/0jx7UIJFChPNrx7tcEgerUgWbeieCM9MfHInUDyK8DWYZ+YrywDJuTg==",
+      "dependencies": [
+        "strnum"
+      ]
+    },
+    "http-proxy-agent@7.0.2": {
+      "integrity": "sha512-T1gkAiYYDWYx3V5Bmyu7HcfcvL7mUrTWiM6yOfa3PIphViJ/gFPbvidQ+veqSOHci/PxBcDabeUNCzpOODJZig==",
+      "dependencies": [
+        "agent-base",
+        "debug"
+      ]
+    },
+    "https-proxy-agent@7.0.5": {
+      "integrity": "sha512-1e4Wqeblerz+tMKPIq2EMGiiWW1dIjZOksyHWSUm1rmuvw/how9hBHZ38lAGj5ID4Ik6EdkOw7NmWPy6LAwalw==",
+      "dependencies": [
+        "agent-base",
+        "debug"
+      ]
+    },
+    "ms@2.1.3": {
+      "integrity": "sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA=="
+    },
+    "strnum@1.0.5": {
+      "integrity": "sha512-J8bbNyKKXl5qYcR36TIO8W3mVGVHrmmxsd5PAItGkmyzwJvybiw2IVq5nqd0i4LSNSkB/sx9VHllbfFdr9k1JA=="
+    },
+    "tslib@2.8.1": {
+      "integrity": "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w=="
     },
     "undici-types@6.19.8": {
       "integrity": "sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw=="
