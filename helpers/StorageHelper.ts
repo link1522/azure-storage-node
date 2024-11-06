@@ -72,3 +72,13 @@ export async function uploadFileBlob({
 
   console.log(`Created blob ${blobName}`);
 }
+
+export async function listBlobs(containerName: string) {
+  const containerClient = blobServiceClient.getContainerClient(containerName);
+
+  const blobs = containerClient.listBlobsFlat();
+  let i = 1;
+  for await (const blob of blobs) {
+    console.log(`Blob ${i++}: ${blob.name}`);
+  }
+}

@@ -4,7 +4,8 @@ import {
   listContainers,
   listContainersByPage,
   createFileBlob,
-  uploadFileBlob
+  uploadFileBlob,
+  listBlobs
 } from './helpers/StorageHelper.ts';
 
 // createContainer('test-999');
@@ -19,8 +20,10 @@ import {
 //   content: 'Hello, World!'
 // });
 
-uploadFileBlob({
-  containerName: 'test-666',
-  blobName: 'test.png',
-  filePath: './test.png'
-});
+// uploadFileBlob({
+//   containerName: 'test-666',
+//   blobName: 'test.png',
+//   filePath: './test.png'
+// });
+
+listBlobs('test-666');
