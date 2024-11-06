@@ -3,15 +3,24 @@ import {
   createContainer,
   listContainers,
   listContainersByPage,
-  createFileBlob
+  createFileBlob,
+  uploadFileBlob
 } from './helpers/StorageHelper.ts';
 
 // createContainer('test-999');
+
 // listContainers();
+
 // listContainersByPage(10);
 
-createFileBlob({
+// createFileBlob({
+//   containerName: 'test-666',
+//   blobName: 'my-blob.txt',
+//   content: 'Hello, World!'
+// });
+
+uploadFileBlob({
   containerName: 'test-666',
-  blobName: 'my-blob.txt',
-  content: 'Hello, World!'
+  blobName: 'test.png',
+  filePath: './test.png'
 });

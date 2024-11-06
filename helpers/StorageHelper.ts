@@ -55,3 +55,20 @@ export async function createFileBlob({
 
   console.log(`Created blob ${blobName}`);
 }
+
+export async function uploadFileBlob({
+  containerName,
+  blobName,
+  filePath
+}: {
+  containerName: string;
+  blobName: string;
+  filePath: string;
+}) {
+  const containerClient = blobServiceClient.getContainerClient(containerName);
+
+  const blockBlobClient = containerClient.getBlockBlobClient(blobName);
+  await blockBlobClient.uploadFile(filePath);
+
+  console.log(`Created blob ${blobName}`);
+}
