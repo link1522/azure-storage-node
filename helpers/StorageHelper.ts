@@ -1,4 +1,5 @@
 import { BlobServiceClient } from 'npm:@azure/storage-blob';
+import { createFolderIfNotExists } from './FsHelper.ts';
 
 const connectionString = Deno.env.get('AZURE_STORAGE_CONNECTION_STRING');
 if (!connectionString) {
@@ -81,4 +82,13 @@ export async function listBlobs(containerName: string) {
   for await (const blob of blobs) {
     console.log(`Blob ${i++}: ${blob.name}`);
   }
+}
+
+export async function downloadBlob(containerName: string, blobName: string) {
+  const containerClient = blobServiceClient.getContainerClient(containerName);
+  const blobClient = containerClient.getBlobClient(blobName);
+
+  const storeFolder = './storage/';
+  await createFolderIfNotExists(storeFolder);
+  await blobClient.downloadToFile(storeFolder + blobName);
 }

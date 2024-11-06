@@ -5,7 +5,8 @@ import {
   listContainersByPage,
   createFileBlob,
   uploadFileBlob,
-  listBlobs
+  listBlobs,
+  downloadBlob
 } from './helpers/StorageHelper.ts';
 
 // createContainer('test-999');
@@ -26,4 +27,6 @@ import {
 //   filePath: './test.png'
 // });
 
-listBlobs('test-666');
+// listBlobs('test-666');
+
+downloadBlob('test-666', 'test.png');
