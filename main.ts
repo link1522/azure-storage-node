@@ -7,7 +7,8 @@ import {
   uploadFileBlob,
   listBlobs,
   downloadBlob,
-  deleteBlob
+  deleteBlob,
+  generateSasDownloadUrl
 } from './helpers/StorageHelper.ts';
 
 // createContainer('test-999');
@@ -32,4 +33,6 @@ import {
 
 // downloadBlob('test-666', 'test.png');
 
-deleteBlob('test-666', 'test.png');
+// deleteBlob('test-666', 'test.png');
+
+generateSasDownloadUrl('test-666', 'my-blob.txt');

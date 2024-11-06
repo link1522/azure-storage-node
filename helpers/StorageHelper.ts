@@ -1,5 +1,6 @@
 import { BlobServiceClient } from 'npm:@azure/storage-blob';
 import { createFolderIfNotExists } from './FsHelper.ts';
+import { ContainerSASPermissions } from 'npm:@azure/storage-blob';
 
 const connectionString = Deno.env.get('AZURE_STORAGE_CONNECTION_STRING');
 if (!connectionString) {
@@ -91,6 +92,21 @@ export async function downloadBlob(containerName: string, blobName: string) {
   const storeFolder = './storage/';
   await createFolderIfNotExists(storeFolder);
   await blobClient.downloadToFile(storeFolder + blobName);
+}
+
+export async function generateSasDownloadUrl(
+  containerName: string,
+  blobName: string
+) {
+  const containerClient = blobServiceClient.getContainerClient(containerName);
+  const blobClient = containerClient.getBlobClient(blobName);
+
+  const sasUrl = await blobClient.generateSasUrl({
+    permissions: ContainerSASPermissions.parse('r'),
+    expiresOn: new Date(Date.now() + 3600 * 1000)
+  });
+
+  console.log(`SAS URL:\n${sasUrl}`);
 }
 
 export async function deleteBlob(containerName: string, blobName: string) {
