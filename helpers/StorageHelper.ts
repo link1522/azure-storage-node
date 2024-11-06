@@ -92,3 +92,9 @@ export async function downloadBlob(containerName: string, blobName: string) {
   await createFolderIfNotExists(storeFolder);
   await blobClient.downloadToFile(storeFolder + blobName);
 }
+
+export async function deleteBlob(containerName: string, blobName: string) {
+  const containerClient = blobServiceClient.getContainerClient(containerName);
+  const blobClient = containerClient.getBlobClient(blobName);
+  await blobClient.delete();
+}

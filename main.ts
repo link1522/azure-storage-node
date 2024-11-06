@@ -6,7 +6,8 @@ import {
   createFileBlob,
   uploadFileBlob,
   listBlobs,
-  downloadBlob
+  downloadBlob,
+  deleteBlob
 } from './helpers/StorageHelper.ts';
 
 // createContainer('test-999');
@@ -29,4 +30,6 @@ import {
 
 // listBlobs('test-666');
 
-downloadBlob('test-666', 'test.png');
+// downloadBlob('test-666', 'test.png');
+
+deleteBlob('test-666', 'test.png');
