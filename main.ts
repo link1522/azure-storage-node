@@ -2,10 +2,16 @@ import 'jsr:@std/dotenv/load';
 import {
   createContainer,
   listContainers,
-  listContainersByPage
+  listContainersByPage,
+  createFileBlob
 } from './helpers/StorageHelper.ts';
 
 // createContainer('test-999');
 // listContainers();
+// listContainersByPage(10);
 
-listContainersByPage(10);
+createFileBlob({
+  containerName: 'test-666',
+  blobName: 'my-blob.txt',
+  content: 'Hello, World!'
+});

@@ -10,7 +10,6 @@ const blobServiceClient =
 
 export async function createContainer(containerName: string) {
   const containerClient = blobServiceClient.getContainerClient(containerName);
-  blobServiceClient.getContainerClient(containerName);
   await containerClient.create();
 
   console.log(`Created container ${containerName}`);
@@ -38,4 +37,21 @@ export async function listContainersByPage(maxPageSize: number) {
       }
     }
   }
+}
+
+export async function createFileBlob({
+  containerName,
+  blobName,
+  content
+}: {
+  containerName: string;
+  blobName: string;
+  content: string;
+}) {
+  const containerClient = blobServiceClient.getContainerClient(containerName);
+
+  const blockBlobClient = containerClient.getBlockBlobClient(blobName);
+  await blockBlobClient.upload(content, content.length);
+
+  console.log(`Created blob ${blobName}`);
 }
